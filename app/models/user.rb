@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :following
 
   has_many :photos
+  has_one_attached :image
   def is_followed_by?(user)
     reverse_of_relationships.find_by(following_id: user.id).present?
   end

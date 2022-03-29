@@ -18,4 +18,18 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @users = user.followers
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update(params.require(:user).permit(:name, :email, :image))
+      flash[:notice] = "ユーザーIDが「#{@user.id}」の情報を更新しました"
+      redirect_to user_path(id: current_user.id)
+    else
+      render "edit"
+    end
+  end
 end
