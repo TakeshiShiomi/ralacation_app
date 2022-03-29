@@ -1,0 +1,27 @@
+<h3>新規投稿</h3>
+ 
+<%= form_with model: @photo do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :address ,"場所" %></th>
+      <td><%= f.text_field :address %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :caption, "テキスト" %></th>
+      <td><%= f.text_area :caption %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :image ,"写真" %></th>
+      <td><%= f.file_field :image %></td>
+    </tr>
+  </table>
+  <div>
+    <ul>
+      <li><%= f.submit "投稿する"%></li>
+    </ul>
+  </div>
+<% end %>
+
+
+
