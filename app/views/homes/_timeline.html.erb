@@ -1,0 +1,20 @@
+<h3>投稿一覧</h3>
+<% @feeds.each do |photo| %>
+<div>
+  <div>
+    <%= link_to photo.user.email, [photo.user] %>
+  </div>
+  <div>
+    <% if photo.image.attached? %>
+      <%= image_tag photo.image %>
+    <% else %>
+      <%= image_tag("https://placehold.jp/300x300.png") %>
+    <% end %>
+  </div>
+  <div>
+    <%= photo.address %>
+  </div>
+  <div>
+    <%= photo.caption %>
+  </div>
+<% end %>
