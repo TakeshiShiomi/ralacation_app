@@ -32,7 +32,11 @@
           <% end %>
         </div>
         <div>
-          <%= link_to photo.address, photo %>
+          <% if photo.latitude.blank? %>
+            <%= photo.address %>
+          <% else %>
+            <%= link_to photo.address, photo %>
+          <% end %>
         </div>
         <div>
           <%= photo.caption %>

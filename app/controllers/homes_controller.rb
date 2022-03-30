@@ -1,9 +1,10 @@
 class HomesController < ApplicationController
   def top
-    @photo = current_user.photos.new
+    @photos = Photo.all
+    gon.photos = Photo.all
     if user_signed_in?
+      @photo = current_user.photos.new
       @feeds = Photo.where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc)
-    else
     end
   end
 
@@ -16,7 +17,7 @@ class HomesController < ApplicationController
       render new
     end
   end
-  
+
   def about
   end
 end
