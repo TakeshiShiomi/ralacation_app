@@ -44,7 +44,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap" async defer></script>
 <% if user_signed_in? %>
   <%= render 'homes/new' %>
-  <%= render 'homes/timeline' %>
+  <%= render 'homes/followtimeline' %>
 <% else %>
 <h4 class="text-center">Relacationとは</h4>
 <p class="text-center">Relacationは癒しスポットを共有するサービスです。Relacationに登録して、全国の癒しスポットを共有しましょう!</p>
@@ -55,4 +55,5 @@
     </div>
   </div>
 </div>
+<%= render 'homes/alltimeline' %>
 <% end %>
