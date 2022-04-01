@@ -1,26 +1,25 @@
-<h4>新規投稿</h4> 
-<%= form_with model: @photo do |f| %>
-  <table>
-    <tr>
-      <th><%= f.label :address ,"場所" %></th>
-      <td><%= f.text_field :address %></td>
-    </tr>
-
-    <tr>
-      <th><%= f.label :caption, "テキスト" %></th>
-      <td><%= f.text_area :caption %></td>
-    </tr>
-    <tr>
-      <th><%= f.label :image ,"写真" %></th>
-      <td><%= f.file_field :image %></td>
-    </tr>
-  </table>
-  <div>
-    <ul>
-      <li><%= f.submit "投稿する"%></li>
-    </ul>
+<div class="col-4 mx-auto">
+  <div class="card border-primary bg-light mb-3" style="max-width: 22rem;">
+    <div class="card-header bg-transparent border-primary">新規投稿</div>
+      <%= form_with model: @photo do |f| %>
+        <div class="card-body text-dark">
+          <div class="col-md-12">
+            <%= f.label :address ,"場所" %>
+            <%= f.text_field :address, class:"form-control" %>
+          </div>
+          <div class="col-md-12">
+            <%= f.label :caption, "テキスト" %>
+            <%= f.text_area :caption, class:"form-control" %>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :image ,"写真" %>
+            <%= f.file_field :image %>
+          </div>
+        </div>
+        <div class="card-footer bg-transparent border-primary">
+          <%= f.submit "投稿する", class:"btn btn-primary"%>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
-
-
-
+</div>

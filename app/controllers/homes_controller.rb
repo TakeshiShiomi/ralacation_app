@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def top
-    @photos = Photo.all
+    @photos = Photo.all.order(created_at: :desc)
     gon.photos = Photo.all
     if user_signed_in?
       @photo = current_user.photos.new
