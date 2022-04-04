@@ -57,3 +57,5 @@ gem 'dotenv-rails'
 gem "geocoder"
 gem "gon"
 gem 'thor'
+gem 'bootstrap', '~> 5.0'
+gem 'jquery-rails'
