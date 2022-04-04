@@ -10,6 +10,7 @@
       <% end %>
       <h1 class="fw-light"><%= @user.name %></h1>
       <p class="text-small"><%= link_to @user.followings.count, followings_user_path(@user) %> フォロー <%= link_to @user.followers.count, followers_user_path(@user) %> フォロワー</p>
+      <p class="text-small"><%= link_to 'いいねした投稿', [@user, :likes] %></p>
       <% if @user == current_user %>
         <p class="lead text-muted">You're currently signed in as <%= current_user.email %></p>
       <% else %>

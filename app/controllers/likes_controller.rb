@@ -1,4 +1,8 @@
 class LikesController < ApplicationController
+  def index
+    @photos = Photo.joins(:likes).where(likes: {user_id: params[:user_id]})
+  end
+  
   def create
     Like.create(user_id: current_user.id, photo_id: params[:id])
     redirect_back(fallback_location: root_path)
