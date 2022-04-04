@@ -17,7 +17,9 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
+    @favorite = Favorite.new
   end
+
   private
 
   def photo_params
