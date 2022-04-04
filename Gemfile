@@ -56,3 +56,4 @@ gem 'devise'
 gem 'dotenv-rails'
 gem "geocoder"
 gem "gon"
+gem 'thor'

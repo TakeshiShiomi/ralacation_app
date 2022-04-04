@@ -259,6 +259,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   spring
   sqlite3
+  thor
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
