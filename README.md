@@ -1,24 +1,57 @@
-# README
+# Relacation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
 
-Things you may want to cover:
+## このアプリケーションを作成した理由
+1. 目まぐるしく変動し慌しい社会に癒しは不可欠。みんなの癒し情報を共有し、より良く充実した人生をみんなで作り出す社会にしたいと思ったから
 
-* Ruby version
+2. 自分の好きなアプリケーションの模擬サイトを作ることによるスキルの向上
 
-* System dependencies
+3. 今ままで学んできた事のアウトプット 　（devise機能、投稿機能実装、active_storageの導入及び写真投稿機能）
 
-* Configuration
+4. 経験にない実装への挑戦(google map api機能の実装、いいね・フォロー機能の実装)
 
-* Database creation
+## 苦労した点
+- google map apiキー非表示
+- いいねとフォロー機能の実装
+多対多の関係、中間テーブルの作成などの理解に苦労した。
 
-* Database initialization
+## DB設計
+#### usersテーブル
+| Column       | Type         |              |
+| :---         | :---         | :---         |
+| email        | string       |              |
+| name         | string       |              |
+| image        | string       |              |
 
-* How to run the test suite
+#### photosテーブル
+| Column       | Type         |              |
+| :---         | :---         | :---         |
+| user_id      | integer      |  null: false, foreign_key: true            |
+| caption      | text         |              |
+| latitude     | float        |              |
+| longitude    | float        |              |
 
-* Services (job queues, cache servers, search engines, etc.)
+#### relationshipsテーブル
+| Column       | Type         |              |
+| :---         | :---         | :---         |
+| following_id | integer      |  null: false |
+| follower_id  | integer      |  null: false |
 
-* Deployment instructions
+#### likesテーブル
+| Column       | Type         |              |
+| :---         | :---         | :---         |
+| user_id      | integer      |              |
+| photo_id     | integer      |              |
 
-* ...
+
+## 課題
+・APIキーなどセキュリティーの意識
+当初APIキーのコードをそのままpushしてしまい、通知にてネット上でアップしたことへのリスクを知り、早急に削除APIキーの再作成を行なった。セキュリティーへの意識はweb制作に携わっていく上で必要な知識であるので、今回の実装で小さく失敗して良かったと思っている。今後は参考サイトを鵜呑みにせず理解した上で実装する習慣を身につけたい。
+・gitにおけるcommit,branch作成の精度と意識
+グループ開発の実践経験が不足しているためcommitの精度やブランチの仕方など未熟に感じています。将来的なグループ開発を進めていく際にはbranch、commitの作成を課題とし、意識を置いて実装していきたいです。
+・デザイン性
+プログラミング未経験の知人に見せたところ、ビジュアル面で懸念を感じていた。デザインに関する知識を身に付け数を積み重ねることで、良くしていきたい。
+
+### あとがき
+模擬SNSサイトを作ることで得た知識や技術を色々なサイト制作で臨機応変出来ると思い、みんなの癒し情報を共有するSNS模擬サイトを制作しました。見た目も、機能もまだまだ技術力の向上が必要だと感じるが、プログラミング学習を始めた４ヶ月前と比べて知識や技術面の成長を感じています。 webアプリケーションはチームや個人で作り上げた成果を多くの人にサービスを届けられることだと考えています。これまでに多くの素晴らしいアプリケーションに出会い便利で役に立つ事が私が生きてきた中でありました。将来は私が感動を覚えたように、自身の技術力を向上し、何か自分で人を喜ばせる、人のためになる物を作り上げ誰かにとってかけがえのないものとなるアプリケーションを作成したいです。
