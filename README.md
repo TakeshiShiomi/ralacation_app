@@ -18,6 +18,7 @@ https://secret-atoll-75279.herokuapp.com/
 多対多の関係、中間テーブルの作成などの理解に苦労した。
 -Herokuデプロイの際様々なエラーが起き対処に苦労した
 （herokuのbundlerとローカルでのbundlerのバージョンの相違、Bootstrapの反映、GoogleのAPIキーをherokuに登録し忘れた為にJSの挙動がおかしいと勘違いし、無駄な試行錯誤をしてしまったなど）。対処の際参考にしたサイトを下記に記す。
+
 https://qiita.com/m6mmsf/items/fb8a8672df98bdb59c9c
 
 https://qiita.com/MandoNarin/items/aa91ffae373a8cfc85d2
