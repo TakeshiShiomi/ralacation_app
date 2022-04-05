@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'homes#top'
   get 'homes/about'
-  devise_for :users
   resources :photos
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
