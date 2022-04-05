@@ -32,6 +32,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rubocop-airbnb'
+  gem 'rspec-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -45,9 +47,15 @@ group :development do
   gem 'spring'
 end
 
-  gem 'sqlite3', groups: %w(test development), require: false
+gem 'sqlite3', groups: %w(test development), require: false
+
 group :production do
   gem 'pg', '~> 1.1'
+end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

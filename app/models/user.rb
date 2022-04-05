@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :photos, -> { order('created_at DESC') }, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_one_attached :image
+  validates :name, presence: true
   def is_followed_by?(user)
     reverse_of_relationships.find_by(following_id: user.id).present?
   end
