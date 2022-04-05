@@ -19,8 +19,11 @@ https://secret-atoll-75279.herokuapp.com/
 -Herokuデプロイの際様々なエラーが起き対処に苦労した
 （herokuのbundlerとローカルでのbundlerのバージョンの相違、Bootstrapの反映、GoogleのAPIキーをherokuに登録し忘れた為にJSの挙動がおかしいと勘違いし、無駄な試行錯誤をしてしまったなど）。対処の際参考にしたサイトを下記に記す。
 https://qiita.com/m6mmsf/items/fb8a8672df98bdb59c9c
+
 https://qiita.com/MandoNarin/items/aa91ffae373a8cfc85d2
+
 https://qiita.com/DogK0625/items/12178fdc3dd607088ff0
+
 https://qiita.com/Jackson123/items/d7d9d333370c0f952b29
 
 ## DB設計
