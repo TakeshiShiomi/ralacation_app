@@ -55,7 +55,13 @@ https://qiita.com/Jackson123/items/d7d9d333370c0f952b29
 | user_id      | integer      |              |
 | photo_id     | integer      |              |
 
-![demo](https://raw.github.com/wiki/TakeshiShiomi/relacation_app/images/sign_in.gif)
+![follow_list](https://user-images.githubusercontent.com/95272366/162178129-9fe840fc-ca76-41f8-94e6-513d0de31046.gif)
+![like](https://user-images.githubusercontent.com/95272366/162178147-1a11167f-6f7b-4b2b-ba6c-12314fbe0eeb.gif)
+![neme_search](https://user-images.githubusercontent.com/95272366/162178167-2c4e0570-cf02-4f2d-9964-ffde03cf7b69.gif)
+![post](https://user-images.githubusercontent.com/95272366/162178171-208dabe6-1727-4328-acd3-46af0bd899ff.gif)
+![search_map](https://user-images.githubusercontent.com/95272366/162178189-a7210c84-9aa3-40ed-99be-3c7db3e0175f.gif)
+![sign_in](https://user-images.githubusercontent.com/95272366/162178196-7f74a7ea-d3ec-432b-b177-c428e64e8324.gif)
+![timeline](https://user-images.githubusercontent.com/95272366/162178208-d16eea75-745e-4bca-b1c1-fe4d9aa877e8.gif)
 
 ## 課題
 ・APIキーなどセキュリティーの意識
