@@ -55,6 +55,7 @@ https://qiita.com/Jackson123/items/d7d9d333370c0f952b29
 | user_id      | integer      |              |
 | photo_id     | integer      |              |
 
+![demo](https://raw.github.com/wiki/TakeshiShiomi/relacation_app/images/sign_in.gif)
 
 ## 課題
 ・APIキーなどセキュリティーの意識
