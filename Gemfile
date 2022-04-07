@@ -68,3 +68,4 @@ gem "gon"
 gem 'thor'
 gem 'bootstrap', '~> 5.0'
 gem 'jquery-rails'
+gem "aws-sdk-s3", require: false
