@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def index
     @users = User.where.not(id: current_user.id)
   end
-
+  
   def followings
     user = User.find(params[:id])
     @users = user.followings
@@ -25,7 +25,9 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(params.require(:user).permit(:name, :email, :image))
+    if @user.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーの更新・削除はできません。'
+    elsif @user.update(params.require(:user).permit(:name, :email, :image))
       flash[:notice] = "アカウント情報を更新しました"
       redirect_to user_path(id: current_user.id)
     else

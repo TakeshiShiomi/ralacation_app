@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   root 'homes#top'
   get 'homes/about'
   resources :photos
@@ -16,5 +18,8 @@ Rails.application.routes.draw do
     get :followings, on: :member
     get :followers, on: :member
     resources :likes
+  end
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 end
