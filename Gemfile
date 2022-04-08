@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rubocop-airbnb'
   gem 'rspec-rails'
   gem 'faker'
+  gem 'selenium-webdriver'
 end
 
 group :development do
