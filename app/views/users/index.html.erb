@@ -1,0 +1,11 @@
+<div class="container marketing">
+  <div class="row d-flex justify-content-center">
+    <div class="col-10 mt-5">
+      <%= form_with url: search_users_path, method: :get, local: true do |f| %>
+        <%= f.text_field :name, :placeholder => "Name検索", id: 'search_name' %>
+        <%= f.submit :検索 %>
+      <% end %>
+      <%= render 'users/list' %>
+    </div>
+  </div>
+</div>

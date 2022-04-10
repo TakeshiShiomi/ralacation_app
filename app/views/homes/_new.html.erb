@@ -1,0 +1,25 @@
+<div class="col-4 mx-auto">
+  <div class="card border-primary bg-light mb-3" style="max-width: 22rem;">
+    <div class="card-header bg-transparent border-primary">新規投稿</div>
+      <%= form_with model: @photo do |f| %>
+        <div class="card-body text-dark">
+          <div class="col-md-12">
+            <%= f.label :address ,"場所" %>
+            <%= f.text_field :address, class:"form-control" %>
+          </div>
+          <div class="col-md-12">
+            <%= f.label :caption, "テキスト" %>
+            <%= f.text_area :caption, class:"form-control" %>
+          </div>
+          <div class="col-md-12">
+            <%= f.label :image ,"写真" %>
+            <%= f.file_field :image, class:"form-control" %>
+          </div>
+        </div>
+        <div class="card-footer bg-transparent border-primary">
+          <%= f.submit "投稿する", class:"btn btn-primary"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

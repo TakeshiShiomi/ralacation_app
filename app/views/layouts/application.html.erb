@@ -1,16 +1,69 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RelacationApp</title>
+    <title>RalacationApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= include_gon %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark p-3">
+      <div class="container-fluid">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          Relacation
+        <% end %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <% if user_signed_in? %>
+              <li class="nav-item active">
+                <%= link_to "つながる", users_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to "マイページ", "/users/#{current_user.id}", class: "nav-link" %>
+              </li>
+              <li class="nav-item active">
+              <%= link_to "アカウント編集", edit_user_path(current_user), class: "nav-link" %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to "パスワード設定", edit_user_registration_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item active">
+                <%= link_to "about", homes_about_path, class:"nav-link"%>
+              </li>
+              <li class="nav-item active">
+                <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to '新規登録(ゲストログインはこちら)', new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-primary text-center" role="alert"><strong><%= notice %></strong></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger text-center" role="alert"><strong><%= alert %></strong></div>
+    <% end %>
     <%= yield %>
+    <footer>
+      <h1>©Relacation 2022</h1>
+    </footer>
   </body>
 </html>
