@@ -1,12 +1,15 @@
-<div id='map'></div>
+<div id='map'>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-4 mx-auto">
-<input id="address" type="textbox" value="東京">
-<input type="button" value="検索" onclick="codeAddress()">
-<div id="display">検索結果の住所を表示します</div>
-</div>
-</div>
+    <div class="text-center">
+      <input id="address" type="textbox" value="東京">
+      <input type="button" value="検索" onclick="codeAddress()">
+        <div id="display">
+          検索結果の住所を表示します
+        </div>
+    </div>
+  </div>
 </div>
 <script>
   let map
@@ -41,20 +44,29 @@
     });   
   }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&callback=initMap" async defer>
+</script>
 <% if user_signed_in? %>
-  <%= render 'homes/new' %>
-  <%= render 'homes/followtimeline' %>
+  <div class="container">
+   <div class="row">
+    <%= render 'homes/new' %>
+    <%= render 'homes/followtimeline' %>
+   </div>
+  </div>
 <% else %>
-<br/>
-<h4 class="text-center">Relacationとは</h4>
-<p class="text-center">Relacationは癒しスポットを共有するサービスです。Relacationに登録して、全国の癒しスポットを共有しましょう!</p>
-<div class="container">
-  <div class="row">
-    <div class="mx-auto" style="width: 150px;">
-      <%= link_to "今すぐ登録!", new_user_registration_path, class: "btn btn-dark" %> 
+  <br/>
+  <h4 class="text-center">Relacationとは</h4>
+  <p class="text-center">Relacationは癒しスポットを共有するサービスです。Relacationに登録して、全国の癒しスポットを共有しましょう!</p>
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto" style="width: 150px;">
+        <%= link_to "今すぐ登録!", new_user_registration_path, class: "btn btn-dark" %> 
+      </div>
     </div>
   </div>
-</div>
-<%= render 'homes/alltimeline' %>
+  <div class="container">
+    <div class="row">
+      <%= render 'homes/alltimeline' %>
+    </div>
+  </div>
 <% end %>
